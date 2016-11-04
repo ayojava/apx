@@ -6,7 +6,7 @@ and open the template in the editor.
 -->
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:p="http://primefaces.org/ui"
-      xmlns:h="http://java.sun.com/jsf/html" xmlns:f="http://xmlns.jcp.org/jsf/core">
+      xmlns:h="http://java.sun.com/jsf/html" xmlns:f="http://xmlns.jcp.org/jsf/core" xmlns:o="http://omnifaces.org/ui">
     <h:head>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
@@ -16,4 +16,31 @@ and open the template in the editor.
         </title>
         <ui:include src="/WEB-INF/common/resources.xhtml"/>
     </h:head>
+    <h:body>
+        <div class="container-fluid">
+            <div class="row">
+                <o:form id="topForm" >
+                    <ui:insert name="topNavBar">Top</ui:insert>
+                </o:form>
+            </div>
+        </div>
+        <div class="sidebar">
+            <div class="container-fluid">
+                <div class="row">
+                    <o:form id="sideForm" >
+                        <ui:insert name="sideBar">Left Content</ui:insert>
+                    </o:form>
+                </div>
+            </div>  
+        </div>
+        <div class="content">
+            <div class="container-fluid">
+                <div class="row">
+                    <o:form id="contentForm" >
+                        <ui:insert name="contentBar">Right Content</ui:insert>
+                    </o:form>
+                </div>
+            </div>
+        </div>
+    </h:body>
 </html>

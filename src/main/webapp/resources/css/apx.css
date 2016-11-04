@@ -8,3 +8,24 @@ and open the template in the editor.
     Author     : ayojava
 */
 
+.sidebar{
+    min-width: 220px;
+    max-width: 220px;
+    background-color:#f5f5f5;
+    float: left;
+    height:100%;
+    position:relative;
+}
+
+.content{
+    height:100%;
+    overflow:auto;
+}
+
+.profile-icon{
+    background: url("#{resource['images/profile.png']}") no-repeat !important;
+}
+
+#menubID.ui-button ui-widget ui-state-default ui-corner-all ui-button-text-icon-left{
+    
+}
