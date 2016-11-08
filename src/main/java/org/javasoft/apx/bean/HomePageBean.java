@@ -6,7 +6,9 @@
 package org.javasoft.apx.bean;
 
 import java.io.Serializable;
+import java.util.Arrays;
 import java.util.List;
+import static java.util.stream.Collectors.joining;
 import static java.util.stream.Collectors.toList;
 import javax.annotation.PostConstruct;
 import javax.faces.view.ViewScoped;
@@ -36,9 +38,16 @@ public class HomePageBean implements Serializable{
     @Getter @Setter
     private Country selectedCountry;
     
+    @Getter @Setter
+    private boolean displayTab;
+    
+    @Getter
+    private String borders , altSpellings;
+        
     @PostConstruct
     public void init() {
         loadTable();
+        displayTab = false;
     }
     
     private void loadTable(){
@@ -51,11 +60,15 @@ public class HomePageBean implements Serializable{
     
     public void onRowSelect(SelectEvent event) {
        log.info("=== Country ==== {} " , ((Country)event.getObject()).getName());
+       selectedCountry=(Country)event.getObject();
+       displayTab = true;
+       borders = Arrays.stream(selectedCountry.getBorders()).collect(joining(", "));
+       altSpellings = Arrays.stream(selectedCountry.getAltSpellings()).collect(joining(", "));
         //log.info("=== Country ==== {} " , selectedCountry.getName());
     }
     
     public void onRowUnSelect(SelectEvent event) {
        log.info("=== Country ==== {} " , ((Country)event.getObject()).getName());
-        //log.info("=== Country ==== {} " , selectedCountry.getName());
+        
     }
 }

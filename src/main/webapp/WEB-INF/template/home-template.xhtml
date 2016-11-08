@@ -28,9 +28,13 @@ and open the template in the editor.
         <table class="table table-bordered table-condensed" style="margin-top: 2px;">
             <tr class="page-background">
                 <td style="width: 12%;" height="560px">
-                    <o:form id="sideForm" >
-                        <ui:insert name="sideBar">Left Content</ui:insert>
-                    </o:form>  
+                    <div class="container-fluid">
+                        <div class="row">
+                            <o:form id="sideForm" >
+                                <ui:insert name="sideBar">Left Content</ui:insert>
+                            </o:form> 
+                        </div>
+                    </div>
                 </td>
                 <td>
                     <o:form id="contentForm" >
@@ -41,17 +45,6 @@ and open the template in the editor.
                 </td>
             </tr>
         </table>
-<!--
-        <div class="sidebar">
-            
-            <div class="container-fluid"></div>  
-            <div class="row"></div>
-           
-
-        </div>
-        <div class="content">
-
-        </div>
- -->
+        
     </h:body>
 </html>

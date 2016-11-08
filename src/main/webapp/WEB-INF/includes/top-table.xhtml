@@ -16,7 +16,7 @@ and open the template in the editor.
                              selection="#{homePageBean.selectedCountry}" selectionMode="single"
                              paginatorTemplate=" {CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink}">
                     
-                    <p:ajax event="rowSelect" listener="#{homePageBean.onRowSelect}"/>
+                    <p:ajax event="rowSelect" listener="#{homePageBean.onRowSelect}" update=":contentForm:apxTabOutputPanel"/>
                      <p:ajax event="rowUnselect" listener="#{homePageBean.onRowUnSelect}"/>
                    
                     <!--
@@ -26,39 +26,44 @@ and open the template in the editor.
                         <h:outputText value="#{rowIndex+1}"/>
                     </p:column>
                     -->
-                    <p:column headerText="Name" style="text-align: left;">
+                    <p:column headerText="#{apx['table.Name']}" style="text-align: left;">
                         <h:outputText value="#{aCountry.name}"/>
                     </p:column>
 
-                    <p:column headerText="Region" style="text-align: left;">
+                    <p:column headerText="#{apx['table.instanceID']}" style="text-align: left;">
                         <h:outputText value="#{aCountry.region}"/>
                     </p:column>
 
-                    <p:column headerText="Sub-Region" style="text-align: left;">
+                    <p:column headerText="#{apx['table.instanceType']}" style="text-align: left;">
                         <h:outputText value="#{aCountry.subregion}"/>
                     </p:column>
 
-                    <p:column headerText="Demonym" style="text-align: left;">
+                    <p:column headerText="#{apx['table.availabilityZone']}" style="text-align: left;">
                         <h:outputText value="#{aCountry.demonym}"/>
                     </p:column>
 
-                    <p:column headerText="Capital" style="text-align: left;">
+                    <p:column headerText="#{apx['table.instanceState']}" style="text-align: left;">
                         <h:outputText value="#{aCountry.capital}"/>
                     </p:column>
 
-                    <p:column headerText="Alpha2Code" style="text-align: center;">
+                    <p:column headerText="#{apx['table.statusChecks']}" style="text-align: center;">
                         <h:outputText value="#{aCountry.alpha2Code}"/>
                     </p:column>
 
-                    <p:column headerText="Alpha3Code" style="text-align: center;">
+                    <p:column headerText="#{apx['table.alarmStatus']}" style="text-align: center;">
                         <h:outputText value="#{aCountry.alpha3Code}"/>
                     </p:column>
                     
-                    <p:column headerText="Population" style="text-align: left;">
+                    <p:column headerText="#{apx['table.publicDNS']}" style="text-align: left;">
                         <h:outputText value="#{aCountry.population}"/>
                     </p:column>
                     
                 </p:dataTable>  
+            </div>
+        </div>
+        <div id="edit" class="row">
+            <div class="col-md-12">
+                <hr size="0" class="separator" />
             </div>
         </div>
 

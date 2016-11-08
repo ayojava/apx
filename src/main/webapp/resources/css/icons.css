@@ -133,3 +133,21 @@ and open the template in the editor.
     height:16px;
     width:16px;
 }
+
+.cc1-icon{
+    background: url("#{resource['images/cc-1.png']}") no-repeat !important;
+    height:16px;
+    width:16px;
+}
+
+.cc2-icon{
+    background: url("#{resource['images/cc-2.png']}") no-repeat !important;
+    height:16px;
+    width:16px;
+}
+
+.cc3-icon{
+    background: url("#{resource['images/cc-3.png']}") no-repeat !important;
+    height:16px;
+    width:16px;
+}

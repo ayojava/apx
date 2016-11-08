@@ -12,30 +12,34 @@ and open the template in the editor.
         <div id="edit" class="row">
             <div class="col-md-12">
                 <div class="pull-left">
-                    <p:commandButton value="Launch Instance"/>
+                    <p:commandButton value="#{apx['btn.launchInstance']}"/>
                     <p:spacer width="2px"/>
-                    <p:commandButton value="Connect"/>
+                    <p:commandButton value="#{apx['btn.connect']}"/>
                     <p:spacer width="2px"/>
-                    <p:splitButton value="Actions">
-                        <p:menuitem value="Save"/>
-                        <p:menuitem value="Close"/>
+                    <p:splitButton value="#{apx['btn.actions']}">
+                        <p:menuitem value="#{apx['btn.save']}"/>
+                        <p:menuitem value="#{apx['btn.close']}"/>
                     </p:splitButton>
                 </div>
 
                 <div class="pull-right">
-                    <p:commandButton icon="refresh-icon" class="img-button"/>
+                    <p:button icon="refresh-icon" class="img-button" />
                     <p:spacer width="8px"/>
-                    <p:commandButton icon="gear-icon" class="img-button"/>
+                    <p:button icon="gear-icon" class="img-button"/>
                     <p:spacer width="8px"/>
-                    <p:commandButton icon="question-icon" class="img-button"/>
+                    <p:button icon="question-icon" class="img-button"/>
                     <p:spacer width="8px"/>
                 </div>
             </div>
         </div>
+
+
         <div id="edit" class="row">
             <div class="col-md-12">
                 <hr size="0" class="separator" />
             </div>
         </div>
+
+
     </h:body>
 </html>
