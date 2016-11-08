@@ -55,3 +55,14 @@ and open the template in the editor.
     border-top:1px dotted #999;
     margin:5px 0px 2px 0px;
 }
+
+
+.ui-button, button.ui-button.ui-state-default, .ui-button.ui-state-default {
+    background-image: linear-gradient(to bottom, #fff 0px, #e0e0e0 100%);
+    background-repeat: repeat-x;
+    border-color: #ccc;
+    border-radius: 12px;
+    text-shadow: 0 1px 0 #fff;
+    padding: 2px;
+    color :#000000;
+}

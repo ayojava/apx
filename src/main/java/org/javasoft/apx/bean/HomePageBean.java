@@ -64,11 +64,10 @@ public class HomePageBean implements Serializable{
        displayTab = true;
        borders = Arrays.stream(selectedCountry.getBorders()).collect(joining(", "));
        altSpellings = Arrays.stream(selectedCountry.getAltSpellings()).collect(joining(", "));
-        //log.info("=== Country ==== {} " , selectedCountry.getName());
+        
     }
     
     public void onRowUnSelect(SelectEvent event) {
-       log.info("=== Country ==== {} " , ((Country)event.getObject()).getName());
-        
+       log.info("=== Country ==== {} " , ((Country)event.getObject()).getName());       
     }
 }

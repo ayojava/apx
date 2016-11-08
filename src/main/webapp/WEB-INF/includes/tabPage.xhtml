@@ -23,18 +23,18 @@ and open the template in the editor.
                 <c:when test="#{homePageBean.displayTab}">
                     <div id="edit" class="row">
                         <div class="col-md-2">
-                            <p:outputLabel value="#{apx['label.instance']}" class="text-warning "/>
+                            <p:outputLabel value="#{apx['label.instance']}" class="text-warning " style="font-size: 17px;"/>
                         </div>
                         <div class="col-md-2">
-                            <span class="text-primary">
+                            <span class="text-primary" style="font-size: 17px;">
                                 #{homePageBean.selectedCountry.name} 
                             </span>
                         </div>
                         <div class="col-md-2">
-                            <p:outputLabel value="#{apx['label.elasticIP']}" class="text-warning "/>
+                            <p:outputLabel value="#{apx['label.elasticIP']}" class="text-warning " style="font-size: 17px;"/>
                         </div>
                         <div class="col-md-2">
-                            <span class="text-primary">
+                            <span class="text-primary" style="font-size: 17px;">
                                 #{homePageBean.selectedCountry.subregion} 
                             </span>
                         </div>

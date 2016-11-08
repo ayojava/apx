@@ -12,4 +12,6 @@ package org.javasoft.apx.rest.intf;
 public interface RestURL {
     
     final String COUNTRIES_URL = "https://restcountries.eu/rest/v1/";
+    
+    final String DUMMY_URL = "http://localhost:8080/apx/rest/resource/";
 }

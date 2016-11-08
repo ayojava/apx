@@ -9,12 +9,11 @@ and open the template in the editor.
       xmlns:of="http://omnifaces.org/functions"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets" xmlns:f="http://java.sun.com/jsf/core">
     <h:body>
-        <!--
-        <div class="col-md-12"></div>
-            -->
-            <p:tree value="#{menuTreeBean.root}" var="treeObj" animate="true" dynamic="true" cache="true"
-                    style="width: 220px;">
-
+        
+            <p:tree value="#{menuTreeBean.root}" var="treeObj" animate="true" dynamic="true" cache="true" 
+                    style="width: 220px;" selectionMode="single" selection="#{menuTreeBean.selectedNode}">
+                
+                <p:ajax event="select" listener="#{menuTreeBean.onNodeSelect(event)}" update=":contentForm:msgHome"/>
                 <p:treeNode expandedIcon="ui-icon-folder-open" collapsedIcon="ui-icon-folder-collapsed">
                     <h:outputText value="#{treeObj}"/>
                 </p:treeNode>

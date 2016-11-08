@@ -37,7 +37,9 @@ and open the template in the editor.
                     </div>
                 </td>
                 <td>
-                    <o:form id="contentForm" >
+                    
+                    <o:form id="contentForm">
+                        <p:growl id="msgHome" globalOnly="true" sticky="false" />
                         <div class="container-fluid">
                             <ui:insert name="contentBar">Right Content</ui:insert>
                         </div>

@@ -9,9 +9,16 @@ import java.io.Serializable;
 import javax.annotation.PostConstruct;
 import javax.faces.view.ViewScoped;
 import javax.inject.Named;
+import javax.ws.rs.client.Client;
+import javax.ws.rs.client.ClientBuilder;
+import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
+import static org.javasoft.apx.rest.intf.RestURL.DUMMY_URL;
+import org.omnifaces.util.Messages;
+import org.primefaces.event.NodeSelectEvent;
 import org.primefaces.model.DefaultTreeNode;
 import org.primefaces.model.TreeNode;
 
@@ -25,7 +32,9 @@ import org.primefaces.model.TreeNode;
 public class MenuTreeBean implements Serializable {
     
     @Getter @Setter
-    private TreeNode root;
+    private TreeNode root,selectedNode;
+        
+    private Client client;
 
     @PostConstruct
     public void init() {
@@ -36,8 +45,6 @@ public class MenuTreeBean implements Serializable {
         TreeNode primefacesApp = new DefaultTreeNode("primefaces","Primefaces", applications);
         TreeNode richfacesApp = new DefaultTreeNode("richfaces","Richfaces", applications);
         TreeNode liferayApp = new DefaultTreeNode("liferay","Liferay", applications);
-        
-        
         
         TreeNode webServices = new DefaultTreeNode("webservices","Web Services", root);
         
@@ -92,7 +99,21 @@ public class MenuTreeBean implements Serializable {
         TreeNode loggerSettings = new DefaultTreeNode("settings", "Logger Settings",defaultConfig);
         TreeNode webContainer = new DefaultTreeNode("settings", "Web Container",defaultConfig);
         TreeNode ejbContainer = new DefaultTreeNode("settings", "EJB Container",defaultConfig);
-        
-        
+                
     }
+    
+    public void onNodeSelect(NodeSelectEvent event) {
+        try{
+            client = ClientBuilder.newClient();
+            Response response =client.target(DUMMY_URL).path("response").request(MediaType.APPLICATION_JSON).get();
+            if (Response.Status.OK.getStatusCode() == response.getStatus()) {
+                Messages.addGlobalInfo("Response [ "+ response.getStatus() +" ]\n from  [ " + DUMMY_URL + "response " + " ]\n");
+            }
+            response.close();
+        }catch(Exception ex){
+            Messages.addGlobalError("An Error Has occured");
+            log.error("Exception ::: ", ex);
+        }
+    }
+    
 }
