@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://xmlns.jcp.org/jsf/html"  xmlns:p="http://primefaces.org/ui" 
+      xmlns:of="http://omnifaces.org/functions"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets" xmlns:f="http://java.sun.com/jsf/core">
+    <h:body>
+        <div id="edit" class="row">
+            <div class="col-md-12">
+                <p:dataTable id="countriesTable" var="aCountry" value="#{homePageBean.allCountries}" 
+                             paginatorPosition="bottom" paginator="true" rows="10" rowIndexVar="rowIndex" rowKey="#{aCountry.population}"
+                             selection="#{homePageBean.selectedCountry}" selectionMode="single"
+                             paginatorTemplate=" {CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink}">
+                    
+                    <p:ajax event="rowSelect" listener="#{homePageBean.onRowSelect}"/>
+                     <p:ajax event="rowUnselect" listener="#{homePageBean.onRowUnSelect}"/>
+                   
+                    <!--
+                     <p:column selectionMode="single" style="width:40px;text-align:center"/>
+                    <p:ajax event="rowSelect" listener="#{homePageBean.onRowSelect(event)}"/>
+                    <p:column headerText="No" style="text-align: center;width: 35px;">
+                        <h:outputText value="#{rowIndex+1}"/>
+                    </p:column>
+                    -->
+                    <p:column headerText="Name" style="text-align: left;">
+                        <h:outputText value="#{aCountry.name}"/>
+                    </p:column>
+
+                    <p:column headerText="Region" style="text-align: left;">
+                        <h:outputText value="#{aCountry.region}"/>
+                    </p:column>
+
+                    <p:column headerText="Sub-Region" style="text-align: left;">
+                        <h:outputText value="#{aCountry.subregion}"/>
+                    </p:column>
+
+                    <p:column headerText="Demonym" style="text-align: left;">
+                        <h:outputText value="#{aCountry.demonym}"/>
+                    </p:column>
+
+                    <p:column headerText="Capital" style="text-align: left;">
+                        <h:outputText value="#{aCountry.capital}"/>
+                    </p:column>
+
+                    <p:column headerText="Alpha2Code" style="text-align: center;">
+                        <h:outputText value="#{aCountry.alpha2Code}"/>
+                    </p:column>
+
+                    <p:column headerText="Alpha3Code" style="text-align: center;">
+                        <h:outputText value="#{aCountry.alpha3Code}"/>
+                    </p:column>
+                    
+                    <p:column headerText="Population" style="text-align: left;">
+                        <h:outputText value="#{aCountry.population}"/>
+                    </p:column>
+                    
+                </p:dataTable>  
+            </div>
+        </div>
+
+    </h:body>
+</html>

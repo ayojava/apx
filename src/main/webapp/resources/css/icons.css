@@ -109,3 +109,27 @@ and open the template in the editor.
     height:16px;
     width:16px;
 }
+
+.balance-icon{
+    background: url("#{resource['images/balance.png']}") no-repeat !important;
+    height:16px;
+    width:16px;
+}
+
+.refresh-icon{
+    background: url("#{resource['images/refresh.png']}") no-repeat !important;
+    height:16px;
+    width:16px;
+}
+
+.gear-icon{
+    background: url("#{resource['images/gear.png']}") no-repeat !important;
+    height:16px;
+    width:16px;
+}
+
+.question-icon{
+    background: url("#{resource['images/question.png']}") no-repeat !important;
+    height:16px;
+    width:16px;
+}

@@ -42,56 +42,56 @@ public class MenuTreeBean implements Serializable {
         TreeNode webServices = new DefaultTreeNode("webservices","Web Services", root);
         
         TreeNode jbi = new DefaultTreeNode("folder","JBI", root);
-//        TreeNode jax = new DefaultTreeNode("xml","JAX", jbi);
-//        TreeNode stax = new DefaultTreeNode("xml","STAX", jbi);
+        TreeNode jax = new DefaultTreeNode("xml","JAX", jbi);
+        TreeNode stax = new DefaultTreeNode("xml","STAX", jbi);
         
         TreeNode customMBeans = new DefaultTreeNode("mbeans","Custom MBeans", root);
         
         TreeNode resources = new DefaultTreeNode("resources","Resources", root);
         
-//        TreeNode jdbc = new DefaultTreeNode("database","JDBC", resources);
+        TreeNode jdbc = new DefaultTreeNode("database","JDBC", resources);
         
-//        TreeNode mySql = new DefaultTreeNode("settings","MySQL", jdbc);
-//        TreeNode h2 = new DefaultTreeNode("settings","H2", jdbc);
-//        TreeNode PostGRE = new DefaultTreeNode("settings","PostGre", jdbc);
-//        
-//        
-//        TreeNode jmsResources = new DefaultTreeNode("square-arrow","JMS Resources", resources);
-//        TreeNode internal = new DefaultTreeNode("settings","Internal", jmsResources);
-//        TreeNode external = new DefaultTreeNode("settings","External", jmsResources);
-//        
-//        TreeNode javaMailSessions = new DefaultTreeNode("email","JavaMail Sessions", resources);
-//        
-//        
-//        TreeNode jndi = new DefaultTreeNode("jndi","JNDI", resources);
-//        TreeNode localJNDI = new DefaultTreeNode("settings","Local JNDI", jndi);
-//        TreeNode remoteJNDI = new DefaultTreeNode("settings","Remote JNDI", jndi);
-//        
-//        TreeNode connectors = new DefaultTreeNode("connector","Connectors", resources);
-//        TreeNode dataConnectors = new DefaultTreeNode("settings","Data Connectors", connectors);
-//        TreeNode webConnectors = new DefaultTreeNode("settings","Web Connectors", connectors);
-//        TreeNode logicConnectors = new DefaultTreeNode("settings","Logic Connectors", connectors);
-//        
-//        TreeNode clusters = new DefaultTreeNode("cluster","Clusters", resources);
-//        
+        TreeNode mySql = new DefaultTreeNode("settings","MySQL", jdbc);
+        TreeNode h2 = new DefaultTreeNode("settings","H2", jdbc);
+        TreeNode PostGRE = new DefaultTreeNode("settings","PostGre", jdbc);
+        
+        
+        TreeNode jmsResources = new DefaultTreeNode("square-arrow","JMS Resources", resources);
+        TreeNode internal = new DefaultTreeNode("settings","Internal", jmsResources);
+        TreeNode external = new DefaultTreeNode("settings","External", jmsResources);
+        
+        TreeNode javaMailSessions = new DefaultTreeNode("email","JavaMail Sessions", resources);
+        
+        
+        TreeNode jndi = new DefaultTreeNode("jndi","JNDI", resources);
+        TreeNode localJNDI = new DefaultTreeNode("settings","Local JNDI", jndi);
+        TreeNode remoteJNDI = new DefaultTreeNode("settings","Remote JNDI", jndi);
+        
+        TreeNode connectors = new DefaultTreeNode("connector","Connectors", resources);
+        TreeNode dataConnectors = new DefaultTreeNode("settings","Data Connectors", connectors);
+        TreeNode webConnectors = new DefaultTreeNode("settings","Web Connectors", connectors);
+        TreeNode logicConnectors = new DefaultTreeNode("settings","Logic Connectors", connectors);
+        
+        TreeNode clusters = new DefaultTreeNode("cluster","Clusters", resources);
+        
         
         TreeNode standAloneInstances = new DefaultTreeNode("standalone","Stand Alone Instances", root);
-//        TreeNode instance1 = new DefaultTreeNode("settings","Instance 1", standAloneInstances);
-//        TreeNode instance2 = new DefaultTreeNode("settings","Instance 2", standAloneInstances);
-//        TreeNode instance3 = new DefaultTreeNode("settings","Instance 3", standAloneInstances);
-//        
+        TreeNode instance1 = new DefaultTreeNode("settings","Instance 1", standAloneInstances);
+        TreeNode instance2 = new DefaultTreeNode("settings","Instance 2", standAloneInstances);
+        TreeNode instance3 = new DefaultTreeNode("settings","Instance 3", standAloneInstances);
+        
         TreeNode httpLoadBalancers = new DefaultTreeNode("balance","Http Load Balancers", root);
         
         TreeNode nodeAgents = new DefaultTreeNode("agents","Node Agents", root);
         
         TreeNode configurations = new DefaultTreeNode("Configurations", root);
         
-//        TreeNode defaultConfig = new DefaultTreeNode("Default Config", configurations);
-//        
-//        TreeNode jvmSettings = new DefaultTreeNode("settings", "JVM Settings",defaultConfig);
-//        TreeNode loggerSettings = new DefaultTreeNode("settings", "Logger Settings",defaultConfig);
-//        TreeNode webContainer = new DefaultTreeNode("settings", "Web Container",defaultConfig);
-//        TreeNode ejbContainer = new DefaultTreeNode("settings", "EJB Container",defaultConfig);
+        TreeNode defaultConfig = new DefaultTreeNode("Default Config", configurations);
+        
+        TreeNode jvmSettings = new DefaultTreeNode("settings", "JVM Settings",defaultConfig);
+        TreeNode loggerSettings = new DefaultTreeNode("settings", "Logger Settings",defaultConfig);
+        TreeNode webContainer = new DefaultTreeNode("settings", "Web Container",defaultConfig);
+        TreeNode ejbContainer = new DefaultTreeNode("settings", "EJB Container",defaultConfig);
         
         
     }
